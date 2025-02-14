@@ -1,7 +1,10 @@
 Algumas observações sobre o SQS
 
-- Sistema de Fila da AWS
-- A mensagem que é consumida deve ser apagada em seguida para não ser lida por outro consumidor
-- Após a mensagem ser lida temos um tempo padrão (geralmente 30 seg.) que ela fica invisivel para outros consumidores, para evitar que outro consumidor pega ela e para dar tempo do consumidor apagá-la
-- Exemplo de uso seria uma Fila que é consumida por um ou mais sistemas que tem a mesma função, ou seja, quem pegar a mensagem primeiro executa o que for necessário. Se o consumidor 1 ou o 2 pegar a mensagem não tem problema, pois eles farão a mesma coisa.
-- Para termos um sistema de mensageria Pub/Sub o SQS tem que atuar em conjunto com o AWS SNS, que tem tópicos e permite a inscrição de consumidores direfentes em um mesmo tópico. Quando chegar uma mensagem no tópico ele irá notificar todos os inscritos.
+- Sistema de Fila da AWS.
+- A mensagem que é consumida deve ser apagada em seguida para não ser lida por outro consumidor.
+- Após a mensagem ser lida temos um tempo padrão (geralmente 30 seg.) que ela fica invisivel para outros consumidores, para evitar 
+que outro consumidor pega ela e para dar tempo do consumidor apagá-la.
+- Exemplo de uso seria uma Fila que é consumida por um ou mais sistemas que tem a mesma função, ou seja, quem pegar a mensagem primeiro 
+executa o que for necessário. Se o consumidor 1 ou o 2 pegar a mensagem não tem problema, pois eles farão a mesma coisa.
+- Para termos um sistema de mensageria Pub/Sub o SQS tem que atuar em conjunto com o AWS SNS, que tem tópicos e permite a inscrição de 
+consumidores direfentes em um mesmo tópico. Quando chegar uma mensagem no tópico ele irá notificar todos os inscritos.
