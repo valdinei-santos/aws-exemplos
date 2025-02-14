@@ -1,15 +1,15 @@
 Documentacao: https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html
 
-# Se necessario tera que ser configurado o console para acessar a AWS
-aws configure
-
-# Zipar o codigo para enviar para AWS
-zip lambda.zip *.mjs
-
 # Para transferir o zip com o codigo da funcao lambda para minha conta na AWS, via linha de comando 
+1 - Se necessario tera que ser configurado o console para acessar a AWS com "aws configure"
+2 - Zipar o codigo para enviar para AWS: 
+zip lambda.zip *.mjs
+3 - Transferir o zip com o codigo da funcao lambda para minha conta na AWS, via linha de comando:
 aws lambda update-function-code --function-name funcaoTeste --zip-file fileb://lambda.zip
 
-# Criar github actions
+
+
+# Criar github actions para automatizar o envio do ZIP
 
 # Marketplace do github com várias Actions já disponível
 https://github.com/marketplace/actions/aws-lambda-deploy
